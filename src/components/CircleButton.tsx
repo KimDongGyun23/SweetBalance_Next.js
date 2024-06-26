@@ -1,3 +1,5 @@
+import { ChildrenProps } from '@/types/commonType';
+
 const CircleButton = ({ children }: ChildrenProps) => {
   return (
     <div className="flexCenter fixed bottom-10 h-20 w-20 self-end rounded-full border-4 border-blue-400 bg-white">

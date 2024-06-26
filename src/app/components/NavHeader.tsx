@@ -1,3 +1,4 @@
+import { ChildrenProps } from '@/types/commonType';
 import { AiOutlineRight } from 'react-icons/ai';
 
 const NavHeader = ({ children }: ChildrenProps) => {
