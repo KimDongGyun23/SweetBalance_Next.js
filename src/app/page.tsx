@@ -1,11 +1,10 @@
+import NavHeader from './components/NavHeader';
+
 export default function Home() {
   return (
-    <div>
-      <h1 className="text-gray-100 w-1">1</h1>
-      <h2 className="text-gray-200">2</h2>
-      <h3>3</h3>
-      <h4>4</h4>
-      <p>p</p>
+    <div className="gap-4 rounded-lg bg-white px-2 py-3">
+      <NavHeader>최고 인기</NavHeader>
+      <div>box</div>
     </div>
   );
 }

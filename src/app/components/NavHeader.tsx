@@ -7,7 +7,7 @@ interface NavHeaderProps {
 
 const NavHeader = ({ children }: NavHeaderProps) => {
   return (
-    <div className="flexAlign gap-1">
+    <div className="flexAlign gap-1 text-xl font-semibold">
       <div>{children}</div>
       <AiOutlineRight size={19} />
     </div>
