@@ -14,8 +14,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko" className="flexCenter bg-blue-50">
-      <body className="flexColumnAlign h-svh w-full max-w-[450px] bg-primary p-5">
-        <Image src="/svgs/logo.svg" alt="logo" width={262} height={112} />
+      <body className="h-svh w-full max-w-[450px] bg-primary p-5">
+        <Image className="mx-auto mb-5" src="/svgs/logo.svg" alt="logo" width={262} height={112} />
         {children}
       </body>
     </html>
