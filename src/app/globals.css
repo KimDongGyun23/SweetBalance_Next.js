@@ -19,25 +19,25 @@
 }
 
 @layer components {
-  .flex-center {
+  .flexCenter {
     @apply flex justify-center items-center;
   }
-  .flex-between {
+  .flexBetween {
     @apply flex justify-between;
   }
-  .flex-between-center {
+  .flexBetweenCenter {
     @apply flex justify-between items-center;
   }
-  .flex-align {
+  .flexAlign {
     @apply flex items-center;
   }
-  .flex-column {
+  .flexColumn {
     @apply flex flex-col;
   }
-  .flex-column-between {
+  .flexColumnBetween {
     @apply flex flex-col justify-between;
   }
-  .flex-column-align {
+  .flexColumnAlign {
     @apply flex flex-col items-center;
   }
 }
