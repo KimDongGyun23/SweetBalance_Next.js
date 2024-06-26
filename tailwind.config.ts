@@ -24,7 +24,7 @@ const config: Config = {
         error: "#FF2020",
       },
       backgroundColor: {
-        primary: "#D5EDFF",
+        primary: "#90C0EF",
       },
     },
   },
