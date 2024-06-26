@@ -1,4 +1,3 @@
-import React from 'react';
 import { AiOutlineLeft } from 'react-icons/ai';
 
 const SubHeader = ({ children }: ChildrenProps) => {
