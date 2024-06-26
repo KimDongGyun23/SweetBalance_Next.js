@@ -1,11 +1,7 @@
 import React from 'react';
 import { AiOutlineRight } from 'react-icons/ai';
 
-interface NavHeaderProps {
-  children: React.ReactNode;
-}
-
-const NavHeader = ({ children }: NavHeaderProps) => {
+const NavHeader = ({ children }: ChildrenProps) => {
   return (
     <div className="flexAlign mb-4 gap-1 text-xl font-semibold">
       <div>{children}</div>
