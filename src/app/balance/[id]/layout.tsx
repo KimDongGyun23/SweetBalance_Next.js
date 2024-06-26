@@ -1,5 +1,4 @@
 import SubHeader from '@/components/SubHeader';
-import { CONTENT_HEIGHT } from '@/constants/common';
 
 export default function ListLayout({
   children,
