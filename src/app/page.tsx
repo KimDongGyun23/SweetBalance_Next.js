@@ -1,11 +1,11 @@
-import MainBalanceItem from './components/MainBalanceItem';
-import NavHeader from './components/NavHeader';
+import MainBalanceList from './components/MainBalanceList';
 
 export default function Home() {
   return (
-    <div className="rounded-lg bg-white px-2 py-3">
-      <NavHeader>최고 인기</NavHeader>
-      <MainBalanceItem />
+    <div className="flexColumn gap-5">
+      {[...Array(3)].map((_, index) => (
+        <MainBalanceList key={index} />
+      ))}
     </div>
   );
 }
