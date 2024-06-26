@@ -9,6 +9,9 @@ const config: Config = {
   theme: {
     screens: {},
     extend: {
+      minHeight: {
+        content: 'calc(100svh - 2.5rem - 112px - 1.25rem )',
+      },
       colors: {
         gray: {
           '100': '#696565',

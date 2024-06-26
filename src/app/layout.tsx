@@ -15,7 +15,9 @@ export default function RootLayout({
   return (
     <html lang="ko" className="flexCenter bg-blue-50">
       <body className="flexColumn min-h-svh w-full max-w-[450px] bg-primary p-5">
-        <Image className="mx-auto mb-5" src="/svgs/logo.svg" alt="logo" width={262} height={112} />
+        <div className="relative mx-auto mb-5 h-[112px] w-[262px]">
+          <Image src="/svgs/logo.svg" alt="logo" layout="fill" objectFit="fill" />
+        </div>
         {children}
       </body>
     </html>
