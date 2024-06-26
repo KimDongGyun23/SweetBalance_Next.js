@@ -12,8 +12,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko">
-      <body>{children}</body>
+    <html lang="ko" className="flexCenter">
+      <body className="max-w-[450px] w-full h-svh bg-blue-50">{children}</body>
     </html>
   );
 }
