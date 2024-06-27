@@ -5,6 +5,7 @@ const config: Config = {
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/features/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     screens: {},
@@ -22,7 +23,6 @@ const config: Config = {
           '200': '#83C7F8',
           '300': '#85Bff4',
           '400': '#2987F5',
-          //...
         },
         error: '#FF2020',
       },
