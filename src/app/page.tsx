@@ -1,23 +1,9 @@
-import MAIN_API from '@/apis/mainApi';
+import getMainList from '@/features/main/apis/getMainList';
 import MainBalanceList from '@/features/main/components/MainBalanceList';
 import { MainListType } from '@/types/mainType';
 
-const fetchData = async () => {
-  try {
-    const response = await MAIN_API.GET.main();
-    if (!response.ok) {
-      console.error('Failed to fetch data');
-      return [];
-    }
-    return response.json();
-  } catch (error) {
-    console.error('Error fetching data:', error);
-    return [];
-  }
-};
-
 export default async function Home() {
-  const { allPostList } = await fetchData();
+  const { allPostList } = await getMainList();
 
   return (
     <div className="flexColumn gap-5">
