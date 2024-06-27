@@ -10,5 +10,6 @@ export interface SubHeaderProps {
 export interface ButtonProps {
   $width: string;
   disabled?: boolean;
+  [key: string]: any;
   children: React.ReactNode;
 }
