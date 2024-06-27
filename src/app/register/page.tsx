@@ -7,9 +7,7 @@ const Register = () => {
     <div className="px-4 py-5">
       <div className="mb-5">
         <BalanceRegisterItem />
-        <div className="w-15 relative h-24">
-          <Image src="/svgs/verse.svg" alt="vs" layout="fill" />
-        </div>
+        <Image src="/svgs/verse.svg" className="mx-auto" alt="vs" width={64} height={96} />
         <BalanceRegisterItem />
       </div>
 
