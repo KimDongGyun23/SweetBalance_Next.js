@@ -1,5 +1,5 @@
 import MAIN_API from '@/apis/mainApi';
-import MainBalanceList from './components/MainBalanceList';
+import MainBalanceList from '@/features/main/components/MainBalanceList';
 import { MainListType } from '@/types/mainType';
 
 const fetchData = async () => {

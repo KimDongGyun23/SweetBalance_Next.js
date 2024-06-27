@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import BalanceSelectItem from './components/BalanceSelectItem';
+import BalanceSelectItem from '@/features/balance/components/BalanceSelectItem';
 
 const Balance = () => {
   return (

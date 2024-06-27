@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import BalanceRegisterItem from './components/BalanceRegisterItem';
+import BalanceRegisterItem from '@/features/register/components/BalanceRegisterItem';
 import Button from '@/components/Button';
 
 const Register = () => {

@@ -1,5 +1,5 @@
 import CircleButton from '@/components/CircleButton';
-import ListItem from './components/ListItem';
+import ListItem from '@/features/list/components/ListItem';
 
 const ListPage = () => {
   return (

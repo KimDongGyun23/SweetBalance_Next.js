@@ -1,4 +1,4 @@
-import { MainPostItemType, MainPostListType } from '@/types/mainType';
+import { MainPostItemType } from '@/types/mainType';
 import React from 'react';
 
 const MainBalanceItem = ({ leftSideTitle, rightSideTitle }: MainPostItemType) => {
