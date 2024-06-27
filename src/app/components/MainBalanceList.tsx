@@ -1,14 +1,19 @@
 import React from 'react';
 import NavHeader from './NavHeader';
 import MainBalanceItem from './MainBalanceItem';
+import { MainListType } from '@/types/mainType';
 
-const MainBalanceList = () => {
+const MainBalanceList = ({ subject, postList }: MainListType) => {
   return (
     <div className="rounded-lg bg-white px-2 py-3">
-      <NavHeader>최고 인기</NavHeader>
+      <NavHeader>{subject}</NavHeader>
       <div className="flexColumn gap-3">
-        {[...Array(4)].map((_, index) => (
-          <MainBalanceItem key={index} />
+        {postList.map((postItem) => (
+          <MainBalanceItem
+            leftSideTitle={postItem.leftSideTitle}
+            rightSideTitle={postItem.rightSideTitle}
+            key={postItem.id}
+          />
         ))}
       </div>
     </div>
