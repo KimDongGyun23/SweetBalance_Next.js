@@ -1,11 +1,16 @@
+'use client';
+
 import { SubHeaderProps } from '@/types/commonType';
+import { useRouter } from 'next/navigation';
 import { AiOutlineInbox, AiOutlineLeft } from 'react-icons/ai';
 
 const SubHeader = ({ icon, children }: SubHeaderProps) => {
+  const router = useRouter();
+
   return (
     <div className="flexBetweenCenter mb-4 text-gray-200">
       <div className="flexAlign gap-1">
-        <AiOutlineLeft size={19} />
+        <AiOutlineLeft className="cursor-pointer" size={19} onClick={() => router.back()} />
         <p className="text-xl font-semibold">{children}</p>
       </div>
 
