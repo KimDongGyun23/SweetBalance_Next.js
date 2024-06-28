@@ -1,6 +1,7 @@
 'use client';
 
 import CircleButton from '@/components/CircleButton';
+import Loading from '@/components/Loading';
 import getBalanceList from '@/features/list/apis/getMainList';
 import ListItem from '@/features/list/components/ListItem';
 import { useInfiniteView } from '@/hooks/useInfiniteView';
@@ -20,8 +21,7 @@ const ListPage = () => {
           <ListItem postItem={postItem} key={postItem.id} />
         ))}
       </div>
-
-      {isLoading ? <div>loading</div> : <div ref={ref} style={{ height: '50px' }} />}
+      {isLoading ? <Loading /> : <div ref={ref} style={{ height: '30px' }} />}
       <CircleButton>NEW</CircleButton>
     </>
   );
