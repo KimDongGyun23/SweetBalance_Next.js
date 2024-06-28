@@ -5,16 +5,18 @@ import BalanceRegisterItem from '@/features/register/components/BalanceRegisterI
 import Button from '@/components/Button';
 import { useRegisterForm } from '@/utils/registerSchema';
 import createBalance from '@/features/register/apis/createBalance';
+import { useRouter } from 'next/navigation';
 
 const Register = () => {
+  const router = useRouter();
   const { register, handleSubmit, errors } = useRegisterForm();
 
   return (
     <form
       className="px-4 py-5"
       onSubmit={handleSubmit(async (formData) => {
-        const res = await createBalance(formData);
-        console.log(res);
+        const GAME_ID = await createBalance(formData);
+        router.push(`/balance/${GAME_ID}`);
       })}
     >
       <div className="mb-5">
