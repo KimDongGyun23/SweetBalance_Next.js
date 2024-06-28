@@ -13,3 +13,8 @@ export interface ButtonProps {
   [key: string]: any;
   children: React.ReactNode;
 }
+
+export interface FetchResponse {
+  postList: any[];
+  lastCursor: number;
+}
