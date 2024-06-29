@@ -1,7 +1,6 @@
 import { SUBJECT_EN, SUBJECT_KR } from '@/constants/common';
 
 const changeSubjectLang = (subject: string) => {
-  console.log(subject);
   let returnArr = [];
   let returnIndex = 0;
 
