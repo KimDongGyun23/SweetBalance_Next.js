@@ -4,15 +4,15 @@
 
 @layer base {
   @font-face {
-    font-family: "Noto Sans KR";
+    font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url("/fonts/NotoSansKR-Regular.ttf") format("truetype");
+    src: url('/fonts/NotoSansKR-Regular.ttf') format('truetype');
   }
 
   html {
-    font-family: "Noto Sans KR", sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
   }
@@ -20,13 +20,13 @@
 
 @layer components {
   .flexCenter {
-    @apply flex justify-center items-center;
+    @apply flex items-center justify-center;
   }
   .flexBetween {
     @apply flex justify-between;
   }
   .flexBetweenCenter {
-    @apply flex justify-between items-center;
+    @apply flex items-center justify-between;
   }
   .flexAlign {
     @apply flex items-center;

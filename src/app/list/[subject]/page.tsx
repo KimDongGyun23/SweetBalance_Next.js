@@ -19,7 +19,7 @@ const ListPage = () => {
   } = useInfiniteView((cursor) => getBalanceList(subject, cursor));
 
   return (
-    <>
+    <div className="flexColumn">
       <div className="flexColumn gap-5">
         {postList.map((postItem: any) => (
           <ListItem
@@ -31,7 +31,7 @@ const ListPage = () => {
       </div>
       {isLoading ? <Loading /> : <div ref={ref} style={{ height: '30px' }} />}
       <CircleButton>NEW</CircleButton>
-    </>
+    </div>
   );
 };
 

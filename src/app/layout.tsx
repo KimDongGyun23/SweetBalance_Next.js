@@ -14,9 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko" className="flexCenter bg-blue-50">
-      <body className="flexColumn min-h-svh w-full max-w-[450px] bg-primary p-5">
+      <body className="flexColumn max-h-svh min-h-svh w-full max-w-[450px] bg-primary p-5">
         <Image src="/svgs/logo.svg" className="mx-auto mb-5" alt="logo" width={262} height={112} />
-        {children}
+        <div className="flex-1 overflow-y-scroll scrollbar-hide">{children}</div>
       </body>
     </html>
   );
