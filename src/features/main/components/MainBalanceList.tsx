@@ -9,6 +9,7 @@ const MainBalanceList = ({ subject, postList }: MainListType) => {
       <div className="flexColumn gap-3">
         {postList.map((postItem) => (
           <MainBalanceItem
+            id={postItem.id}
             leftSideTitle={postItem.leftSideTitle}
             rightSideTitle={postItem.rightSideTitle}
             key={postItem.id}

@@ -1,9 +1,17 @@
-import { MainPostItemType } from '@/types/mainType';
+'use client';
+import { MainPostListType } from '@/types/mainType';
+import { useRouter } from 'next/navigation';
 import React from 'react';
 
-const MainBalanceItem = ({ leftSideTitle, rightSideTitle }: MainPostItemType) => {
+const MainBalanceItem = ({ id, leftSideTitle, rightSideTitle }: MainPostListType) => {
+  const router = useRouter();
+  const handleClick = () => router.push(`/balance/${id}`);
+
   return (
-    <div className="flexBetweenCenter gap-3 rounded-lg bg-blue-100 px-5 py-1 text-center">
+    <div
+      className="flexBetweenCenter cursor-pointer gap-3 rounded-lg bg-blue-100 px-5 py-1 text-center"
+      onClick={handleClick}
+    >
       <p className="flex-1 overflow-hidden text-ellipsis whitespace-nowrap text-xs">
         {leftSideTitle}
       </p>

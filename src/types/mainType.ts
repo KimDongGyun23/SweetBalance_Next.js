@@ -8,5 +8,3 @@ export interface MainListType {
   subject: string;
   postList: MainPostListType[];
 }
-
-export type MainPostItemType = Pick<MainPostListType, 'leftSideTitle' | 'rightSideTitle'>;
