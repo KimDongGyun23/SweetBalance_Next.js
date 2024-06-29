@@ -1,4 +1,4 @@
-import { SUBJECT_EN, SUBJECT_KR } from '@/constants/commonet';
+import { SUBJECT_EN, SUBJECT_KR } from '@/constants/common';
 
 const changeSubjectLang = (subject: string) => {
   console.log(subject);
