@@ -40,4 +40,7 @@
   .flexColumnAlign {
     @apply flex flex-col items-center;
   }
+  .placeholder-center::placeholder {
+    @apply text-center;
+  }
 }
