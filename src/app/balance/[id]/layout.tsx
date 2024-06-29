@@ -6,9 +6,9 @@ export default function ListLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className={`flexColumn min-h-content rounded-xl bg-white px-3 py-4`}>
+    <div className="flexColumn min-h-content rounded-xl bg-white px-3 py-4">
       <SubHeader isGame icon />
-      <div className="flexCenter flex-1">{children}</div>
+      <div className="flexColumn flex-1 justify-center">{children}</div>
     </div>
   );
 }
