@@ -14,6 +14,11 @@ export interface ButtonProps {
   children: React.ReactNode;
 }
 
+export interface CircleButtonProps {
+  onClick: () => void;
+  children: React.ReactNode;
+}
+
 export interface FetchResponse {
   postList: any[];
   lastCursor: number;

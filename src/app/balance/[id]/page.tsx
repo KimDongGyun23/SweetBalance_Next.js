@@ -5,9 +5,11 @@ import usebalanceGameData from '@/features/balance/hooks/usebalanceGameData';
 import Loading from '@/components/Loading';
 import ErrorText from '@/components/ErrorText';
 import CircleButton from '@/components/CircleButton';
+import { useRouter } from 'next/navigation';
 
 const Balance = () => {
-  const { isLoading, isError, balanceData } = usebalanceGameData();
+  const router = useRouter();
+  const { isLoading, isError, balanceData, id } = usebalanceGameData();
 
   if (isLoading) return <Loading />;
   if (isError || !balanceData) return <ErrorText>밸런스 게임이 존재하지 않습니다.</ErrorText>;
@@ -24,7 +26,7 @@ const Balance = () => {
           detail={balanceData.rightSideDetail}
         />
       </div>
-      <CircleButton>댓글</CircleButton>
+      <CircleButton onClick={() => router.push(`/comment/${id}`)}>댓글</CircleButton>
     </>
   );
 };

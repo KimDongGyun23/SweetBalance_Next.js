@@ -6,10 +6,11 @@ import getBalanceList from '@/features/list/apis/getBalanceList';
 import ListItem from '@/features/list/components/ListItem';
 import { useInfiniteView } from '@/hooks/useInfiniteView';
 import changeSubjectLang from '@/utils/changeSubjectLang';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 const ListPage = () => {
   const path = usePathname();
+  const router = useRouter();
   const subject = path.replace('/list/', '');
 
   const {
@@ -30,7 +31,7 @@ const ListPage = () => {
         ))}
       </div>
       {isLoading ? <Loading /> : <div ref={ref} style={{ height: '30px' }} />}
-      <CircleButton>NEW</CircleButton>
+      <CircleButton onClick={() => router.push('/register')}>NEW</CircleButton>
     </div>
   );
 };

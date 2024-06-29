@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 
 const usebalanceGameData = () => {
   const path = usePathname();
+  const id = +path.replace('/balance/', '');
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isError, setIsError] = useState<boolean>(false);
   const [balanceData, setBalanceData] = useState<BalanceDataType | null>(null);
@@ -12,7 +13,7 @@ const usebalanceGameData = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await BALANCE_API.GET.balance(+path.replace('/balance/', ''));
+        const response = await BALANCE_API.GET.balance(id);
         if (!response.ok) {
           setIsError(true);
           throw new Error('Failed to fetch data');
@@ -28,7 +29,7 @@ const usebalanceGameData = () => {
     fetchData();
   }, []);
 
-  return { isLoading, isError, balanceData };
+  return { isLoading, isError, balanceData, id };
 };
 
 export default usebalanceGameData;
