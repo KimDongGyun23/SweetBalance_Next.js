@@ -13,8 +13,8 @@ const SubHeader = ({ isGame, icon }: SubHeaderProps) => {
 
   if (isGame) header = params.get('subject') as string;
   else if (path.includes('register')) header = '나만의 밸런스 게임';
-  else if (path.includes('comment')) header = '댓글';
   else if (path.includes('recomment')) header = '대댓글';
+  else if (path.includes('comment')) header = '댓글';
   else {
     const EXTRACT_HEADER = changeSubjectLang(path.replace('/list/', ''));
     header = `${EXTRACT_HEADER} Balance`;
