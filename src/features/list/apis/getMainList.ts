@@ -5,12 +5,12 @@ const getBalanceList = async (subject: string, cursor: number) => {
     const response = await LIST_API.GET.infinityList(subject, cursor);
     if (!response.ok) {
       console.error('Failed to fetch data');
-      return [];
+      throw new Error('Failed to fetch data');
     }
     return response.json();
   } catch (error) {
     console.error('Error fetching data:', error);
-    return [];
+    throw new Error('Failed to fetch data');
   }
 };
 
