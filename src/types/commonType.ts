@@ -4,7 +4,6 @@ export interface ChildrenProps {
 
 export interface SubHeaderProps {
   icon?: boolean;
-  children: React.ReactNode;
 }
 
 export interface ButtonProps {

@@ -1,4 +1,3 @@
-import React from 'react';
 import NavHeader from './NavHeader';
 import MainBalanceItem from './MainBalanceItem';
 import { MainListType } from '@/types/mainType';
