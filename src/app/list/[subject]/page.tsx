@@ -5,14 +5,14 @@ import Loading from '@/components/Loading';
 import getBalanceList from '@/features/list/apis/getMainList';
 import ListItem from '@/features/list/components/ListItem';
 import { useInfiniteView } from '@/hooks/useInfiniteView';
+import { ListPageType } from '@/types/listType';
 
-const ListPage = () => {
-  const subject = 'latest';
+const ListPage = ({ params }: ListPageType) => {
   const {
     list: postList,
     ref,
     isLoading,
-  } = useInfiniteView((cursor) => getBalanceList(subject, cursor));
+  } = useInfiniteView((cursor) => getBalanceList(params.subject, cursor));
 
   return (
     <>

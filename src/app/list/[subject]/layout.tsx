@@ -7,7 +7,7 @@ export default function ListLayout({
 }>) {
   return (
     <>
-      <SubHeader>최근 등록 밸런스</SubHeader>
+      <SubHeader />
       {children}
     </>
   );
