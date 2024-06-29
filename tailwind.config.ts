@@ -13,6 +13,9 @@ const config: Config = {
       minHeight: {
         content: 'calc(100svh - 2.5rem - 112px - 1.25rem )',
       },
+      maxHeight: {
+        content: 'calc(100svh - 2.5rem - 112px - 1.25rem )',
+      },
       colors: {
         gray: {
           '100': '#696565',
