@@ -1,5 +1,6 @@
 export interface MainPostListType {
   id: number;
+  subject: string;
   leftSideTitle: string;
   rightSideTitle: string;
 }

@@ -2,9 +2,9 @@
 import { useRouter } from 'next/navigation';
 import { AiOutlineInbox } from 'react-icons/ai';
 
-const ListItem = ({ postItem }: { postItem: any }) => {
+const ListItem = ({ subject, postItem }: { subject: string; postItem: any }) => {
   const router = useRouter();
-  const handleClick = () => router.push(`/balance/${postItem.id}`);
+  const handleClick = () => router.push(`/balance/${postItem.id}?subject=${subject}`);
 
   return (
     <div

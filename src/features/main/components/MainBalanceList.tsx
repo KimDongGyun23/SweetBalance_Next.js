@@ -10,6 +10,7 @@ const MainBalanceList = ({ subject, postList }: MainListType) => {
         {postList.map((postItem) => (
           <MainBalanceItem
             id={postItem.id}
+            subject={subject}
             leftSideTitle={postItem.leftSideTitle}
             rightSideTitle={postItem.rightSideTitle}
             key={postItem.id}

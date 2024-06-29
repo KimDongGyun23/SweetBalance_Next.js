@@ -2,19 +2,27 @@
 
 import { SubHeaderProps } from '@/types/commonType';
 import changeSubjectLang from '@/utils/changeSubjectLang';
-import { usePathname, useRouter } from 'next/navigation';
+import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 import { AiOutlineInbox, AiOutlineLeft } from 'react-icons/ai';
 
-const SubHeader = ({ icon }: SubHeaderProps) => {
+const SubHeader = ({ isGame, icon }: SubHeaderProps) => {
   const router = useRouter();
   const path = usePathname();
-  const HEADER_TEXT = changeSubjectLang(path.replace('/list/', ''));
+  const params = useSearchParams();
+  let header = '';
+
+  if (isGame) header = params.get('subject') as string;
+  else if (path.includes('register')) header = '나만의 밸런스 게임';
+  else {
+    const EXTRACT_HEADER = changeSubjectLang(path.replace('/list/', ''));
+    header = `${EXTRACT_HEADER} Balance`;
+  }
 
   return (
     <div className="flexBetweenCenter mb-4 text-gray-200">
       <div className="flexAlign gap-1">
         <AiOutlineLeft className="cursor-pointer" size={19} onClick={() => router.back()} />
-        <p className="text-xl font-semibold">{HEADER_TEXT} Balance</p>
+        <p className="text-xl font-semibold">{header}</p>
       </div>
 
       {icon && (

@@ -3,6 +3,7 @@ export interface ChildrenProps {
 }
 
 export interface SubHeaderProps {
+  isGame?: boolean;
   icon?: boolean;
 }
 

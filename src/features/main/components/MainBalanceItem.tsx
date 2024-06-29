@@ -3,9 +3,9 @@ import { MainPostListType } from '@/types/mainType';
 import { useRouter } from 'next/navigation';
 import React from 'react';
 
-const MainBalanceItem = ({ id, leftSideTitle, rightSideTitle }: MainPostListType) => {
+const MainBalanceItem = ({ id, subject, leftSideTitle, rightSideTitle }: MainPostListType) => {
   const router = useRouter();
-  const handleClick = () => router.push(`/balance/${id}`);
+  const handleClick = () => router.push(`/balance/${id}?subject=${subject}`);
 
   return (
     <div

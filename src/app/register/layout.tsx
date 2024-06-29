@@ -7,7 +7,7 @@ export default function ListLayout({
 }>) {
   return (
     <div className={`flexColumn min-h-content rounded-xl bg-white px-3 py-4`}>
-      <SubHeader>나만의 밸런스 게임</SubHeader>
+      <SubHeader />
       <div className="flex-1">{children}</div>
     </div>
   );

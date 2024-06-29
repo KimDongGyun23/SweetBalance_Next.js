@@ -15,9 +15,3 @@ export interface ListType {
   lastCursor: number;
   postList: PostListType;
 }
-
-export interface ListPageType {
-  params: {
-    subject: string;
-  };
-}

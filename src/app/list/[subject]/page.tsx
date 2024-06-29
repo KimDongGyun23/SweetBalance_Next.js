@@ -5,20 +5,28 @@ import Loading from '@/components/Loading';
 import getBalanceList from '@/features/list/apis/getBalanceList';
 import ListItem from '@/features/list/components/ListItem';
 import { useInfiniteView } from '@/hooks/useInfiniteView';
-import { ListPageType } from '@/types/listType';
+import changeSubjectLang from '@/utils/changeSubjectLang';
+import { usePathname } from 'next/navigation';
 
-const ListPage = ({ params }: ListPageType) => {
+const ListPage = () => {
+  const path = usePathname();
+  const subject = path.replace('/list/', '');
+
   const {
     list: postList,
     ref,
     isLoading,
-  } = useInfiniteView((cursor) => getBalanceList(params.subject, cursor));
+  } = useInfiniteView((cursor) => getBalanceList(subject, cursor));
 
   return (
     <>
       <div className="flexColumn gap-5">
         {postList.map((postItem: any) => (
-          <ListItem postItem={postItem} key={postItem.id} />
+          <ListItem
+            subject={changeSubjectLang(subject) + ' balance'}
+            postItem={postItem}
+            key={postItem.id}
+          />
         ))}
       </div>
       {isLoading ? <Loading /> : <div ref={ref} style={{ height: '30px' }} />}
