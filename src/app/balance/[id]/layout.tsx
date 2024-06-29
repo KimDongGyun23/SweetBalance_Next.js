@@ -7,7 +7,7 @@ export default function ListLayout({
 }>) {
   return (
     <div className={`flexColumn min-h-content rounded-xl bg-white px-3 py-4`}>
-      <SubHeader icon>최고 인기</SubHeader>
+      <SubHeader icon />
       <div className="flexCenter flex-1">{children}</div>
     </div>
   );
