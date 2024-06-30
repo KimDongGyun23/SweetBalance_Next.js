@@ -5,12 +5,11 @@ import Loading from '@/components/Loading';
 import Bubble from '@/features/comment/components/Bubble';
 import BubbleFooter from '@/features/comment/components/BubbleFooter';
 import { useCommentList } from '@/features/comment/hooks/useCommentList';
-import { usePathname } from 'next/navigation';
+import { useParams } from 'next/navigation';
 
 const Comment = () => {
-  const path = usePathname();
-  const id = path.replace('/comment/', '');
-  const { commentList, isLoading, error } = useCommentList(id);
+  const { commentId } = useParams();
+  const { commentList, isLoading, error } = useCommentList(commentId as string);
 
   if (isLoading) return <Loading />;
   if (error) return <ErrorText>{error}</ErrorText>;

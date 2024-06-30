@@ -1,8 +1,23 @@
+'use client';
 import CommentInput from '@/components/CommentInput';
+import ErrorText from '@/components/ErrorText';
+import Loading from '@/components/Loading';
 import Bubble from '@/features/comment/components/Bubble';
 import BubbleFooter from '@/features/comment/components/BubbleFooter';
+import { useRecommentList } from '@/features/recomment/hooks/useRecommentList';
+import { useParams } from 'next/navigation';
 
-const Comment = () => {
+const Recomment = () => {
+  const { commentId, recommentId } = useParams();
+  const { commentList, isLoading, error } = useRecommentList(
+    commentId as string,
+    recommentId as string
+  );
+
+  if (isLoading) return <Loading />;
+  if (error) return <ErrorText>{error}</ErrorText>;
+  if (commentList === null) return null;
+
   return (
     <>
       <div
@@ -22,4 +37,4 @@ const Comment = () => {
   );
 };
 
-export default Comment;
+export default Recomment;
