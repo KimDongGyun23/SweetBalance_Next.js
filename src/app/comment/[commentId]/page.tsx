@@ -2,10 +2,10 @@
 import CommentInput from '@/components/CommentInput';
 import ErrorText from '@/components/ErrorText';
 import Loading from '@/components/Loading';
-import Bubble from '@/app/comment/[commentId]/components/Bubble';
-import BubbleFooter from '@/app/comment/[commentId]/components/BubbleFooter';
 import { useCommentList } from '@/app/comment/[commentId]/hooks/useCommentList';
 import { useParams } from 'next/navigation';
+import Bubble from '@/components/Bubble';
+import BubbleFooter from '@/components/BubbleFooter';
 
 const Comment = () => {
   const { commentId } = useParams();
