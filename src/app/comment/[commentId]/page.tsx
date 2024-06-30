@@ -8,7 +8,7 @@ import Bubble from '@/components/Bubble';
 import BubbleFooter from '@/components/BubbleFooter';
 
 const Comment = () => {
-  const { commentId } = useParams();
+  const { commentId }: { commentId: string } = useParams();
   const { commentList, isLoading, error } = useCommentList(commentId as string);
 
   if (isLoading) return <Loading />;
@@ -20,11 +20,14 @@ const Comment = () => {
       <div
         className={`flexColumn flex-1 gap-[10px] overflow-x-hidden overflow-y-scroll p-3 scrollbar-hide`}
       >
-        {commentList.map((_, index) => (
-          <div className={`flex ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`} key={index}>
+        {commentList.map((comment, index) => (
+          <div
+            className={`flex ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}
+            key={comment.id}
+          >
             <div className="flexColumn gap-1">
-              <Bubble sideInfo={index % 2} />
-              <BubbleFooter sideInfo={index % 2} />
+              <Bubble content={comment.content} sideInfo={index % 2} />
+              <BubbleFooter commentId={commentId} recommentId={comment.id} sideInfo={index % 2} />
             </div>
           </div>
         ))}

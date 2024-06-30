@@ -1,6 +1,6 @@
 import { BubbleType } from '@/types/commentType';
 
-const Bubble = ({ sideInfo }: BubbleType) => {
+const Bubble = ({ content, sideInfo }: BubbleType) => {
   return (
     <div className="relative min-w-8 max-w-48 break-words rounded-xl bg-white p-2 text-sm">
       {sideInfo === 0 ? (
@@ -8,7 +8,7 @@ const Bubble = ({ sideInfo }: BubbleType) => {
       ) : (
         <div className="absolute -right-[19px] -top-[11.5px] -rotate-[40deg] rounded-md border-[10px] border-x-[15px] border-transparent border-l-white border-r-transparent" />
       )}
-      hi
+      {content}
     </div>
   );
 };
