@@ -1,7 +1,6 @@
 import CommentInput from '@/components/CommentInput';
 import Bubble from '@/features/comment/components/Bubble';
 import BubbleFooter from '@/features/comment/components/BubbleFooter';
-import React from 'react';
 
 const Comment = () => {
   return (
