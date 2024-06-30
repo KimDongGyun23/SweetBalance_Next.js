@@ -6,7 +6,7 @@ import { useCommentList } from '@/app/comment/[commentId]/hooks/useCommentList';
 import { useParams } from 'next/navigation';
 import Bubble from '@/components/Bubble';
 import BubbleFooter from '@/components/BubbleFooter';
-import postComment from './hooks/postComment';
+import postComment from './apis/postComment';
 
 const Comment = () => {
   const { commentId }: { commentId: string } = useParams();
