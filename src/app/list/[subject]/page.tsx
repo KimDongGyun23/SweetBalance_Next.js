@@ -2,8 +2,8 @@
 
 import CircleButton from '@/components/CircleButton';
 import Loading from '@/components/Loading';
-import getBalanceList from '@/features/list/apis/getBalanceList';
-import ListItem from '@/features/list/components/ListItem';
+import getBalanceList from '@/app/list/[subject]/apis/getBalanceList';
+import ListItem from '@/app/list/[subject]/components/ListItem';
 import { useInfiniteView } from '@/hooks/useInfiniteView';
 import changeSubjectLang from '@/utils/changeSubjectLang';
 import { usePathname, useRouter } from 'next/navigation';

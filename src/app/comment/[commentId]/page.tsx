@@ -2,9 +2,9 @@
 import CommentInput from '@/components/CommentInput';
 import ErrorText from '@/components/ErrorText';
 import Loading from '@/components/Loading';
-import Bubble from '@/features/comment/components/Bubble';
-import BubbleFooter from '@/features/comment/components/BubbleFooter';
-import { useCommentList } from '@/features/comment/hooks/useCommentList';
+import Bubble from '@/app/comment/[commentId]/components/Bubble';
+import BubbleFooter from '@/app/comment/[commentId]/components/BubbleFooter';
+import { useCommentList } from '@/app/comment/[commentId]/hooks/useCommentList';
 import { useParams } from 'next/navigation';
 
 const Comment = () => {

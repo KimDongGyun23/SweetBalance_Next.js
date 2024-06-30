@@ -1,5 +1,5 @@
-import getMainList from '@/features/main/apis/getMainList';
-import MainBalanceList from '@/features/main/components/MainBalanceList';
+import getMainList from '@/app/apis/getMainList';
+import MainBalanceList from '@/app/components/MainBalanceList';
 import { MainListType } from '@/types/mainType';
 
 export default async function Home() {

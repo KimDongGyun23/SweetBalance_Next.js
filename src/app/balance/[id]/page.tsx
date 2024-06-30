@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
-import BalanceSelectItem from '@/features/balance/components/BalanceSelectItem';
-import usebalanceGameData from '@/features/balance/hooks/usebalanceGameData';
+import BalanceSelectItem from '@/app/balance/[id]/components/BalanceSelectItem';
+import usebalanceGameData from '@/app/balance/[id]/hooks/usebalanceGameData';
 import Loading from '@/components/Loading';
 import ErrorText from '@/components/ErrorText';
 import CircleButton from '@/components/CircleButton';

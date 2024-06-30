@@ -1,10 +1,10 @@
 'use client';
 
 import Image from 'next/image';
-import BalanceRegisterItem from '@/features/register/components/BalanceRegisterItem';
+import BalanceRegisterItem from '@/app/register/components/BalanceRegisterItem';
 import Button from '@/components/Button';
 import { useRegisterForm } from '@/utils/registerSchema';
-import createBalance from '@/features/register/apis/createBalance';
+import createBalance from '@/app/register/apis/createBalance';
 import { useRouter } from 'next/navigation';
 
 const Register = () => {
