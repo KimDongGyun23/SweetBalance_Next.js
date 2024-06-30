@@ -14,3 +14,13 @@ export interface BubbleFooterType {
   recommentId: string | number;
   sideInfo: number;
 }
+
+export interface SendingCommentType {
+  content: string;
+  sideInfo: number;
+  parentCommentId: number;
+}
+
+export interface CommentInputType {
+  onClick: (comment: string) => Promise<void>;
+}

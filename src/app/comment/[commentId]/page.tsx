@@ -6,10 +6,13 @@ import { useCommentList } from '@/app/comment/[commentId]/hooks/useCommentList';
 import { useParams } from 'next/navigation';
 import Bubble from '@/components/Bubble';
 import BubbleFooter from '@/components/BubbleFooter';
+import postComment from './hooks/postComment';
 
 const Comment = () => {
   const { commentId }: { commentId: string } = useParams();
   const { commentList, isLoading, error } = useCommentList(commentId as string);
+  const onClick = async (comment: string) =>
+    await postComment({ content: comment, sideInfo: 0, parentCommentId: -1 }, commentId);
 
   if (isLoading) return <Loading />;
   if (error) return <ErrorText>{error}</ErrorText>;
@@ -32,7 +35,7 @@ const Comment = () => {
           </div>
         ))}
       </div>
-      <CommentInput />
+      <CommentInput onClick={onClick} />
     </>
   );
 };
