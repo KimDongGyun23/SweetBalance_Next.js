@@ -18,7 +18,7 @@ export interface BubbleFooterType {
 export interface SendingCommentType {
   content: string;
   sideInfo: number;
-  parentCommentId: string | number;
+  parentCommentId: number;
 }
 
 export interface CommentInputType {

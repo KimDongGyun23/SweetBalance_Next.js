@@ -15,7 +15,7 @@ const BubbleFooter = ({ commentId, recommentId, sideInfo }: BubbleFooterType) =>
       {!isRecomment && (
         <div
           className="flexAlign cursor-pointer gap-[1px]"
-          onClick={() => router.push(`/comment/${commentId}/recommnet/${recommentId}`)}
+          onClick={() => router.push(`/comment/${commentId}/recomment/${recommentId}`)}
         >
           <span>15</span>
           <AiOutlineComment />

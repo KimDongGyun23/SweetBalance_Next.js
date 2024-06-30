@@ -15,7 +15,10 @@ const Recomment = () => {
     recommentId as string
   );
   const onClick = async (comment: string) =>
-    await postRecomment({ content: comment, sideInfo: 0, parentCommentId: commentId }, commentId);
+    await postRecomment(
+      { content: comment, sideInfo: 0, parentCommentId: +recommentId },
+      commentId
+    );
 
   if (isLoading) return <Loading />;
   if (error) return <ErrorText>{error}</ErrorText>;
