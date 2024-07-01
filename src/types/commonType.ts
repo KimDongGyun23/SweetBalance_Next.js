@@ -15,7 +15,6 @@ export interface ButtonProps {
 }
 
 export interface CircleButtonProps {
-  onClick: () => void;
   children: React.ReactNode;
 }
 

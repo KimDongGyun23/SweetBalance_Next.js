@@ -1,19 +1,13 @@
-'use client';
 import Image from 'next/image';
 import BalanceSelectItem from '@/app/balance/[id]/components/BalanceSelectItem';
-import usebalanceGameData from '@/app/balance/[id]/hooks/usebalanceGameData';
-import Loading from '@/components/Loading';
-import ErrorText from '@/components/ErrorText';
 import CircleButton from '@/components/CircleButton';
-import { useParams, useRouter } from 'next/navigation';
+import Link from 'next/link';
+import balanceGameData from './apis/balanceGameData';
+import { BalancePageType } from '@/types/balanceType';
 
-const Balance = () => {
-  const router = useRouter();
-  const { id }: { id: string } = useParams();
-  const { isLoading, isError, balanceData } = usebalanceGameData(id);
-
-  if (isLoading) return <Loading />;
-  if (isError || !balanceData) return <ErrorText>밸런스 게임이 존재하지 않습니다.</ErrorText>;
+const Balance = async ({ params }: BalancePageType) => {
+  const id = params.id;
+  const balanceData = await balanceGameData(id);
 
   return (
     <>
@@ -27,7 +21,9 @@ const Balance = () => {
           detail={balanceData.rightSideDetail}
         />
       </div>
-      <CircleButton onClick={() => router.push(`/comment/${id}`)}>댓글</CircleButton>
+      <Link href={`/comment/${id}`}>
+        <CircleButton>댓글</CircleButton>
+      </Link>
     </>
   );
 };
