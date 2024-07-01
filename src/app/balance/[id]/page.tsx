@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import BalanceSelectItem from '@/app/balance/[id]/_components/BalanceSelectItem';
 import CircleButton from '@/components/CircleButton';
-import balanceGameData from '../../../services/balance/balanceGameData';
+import balanceGameData from '@/services/balance/balanceGameData';
 import { BalancePageType } from '@/types/balanceType';
 
 const Balance = async ({ params }: BalancePageType) => {
