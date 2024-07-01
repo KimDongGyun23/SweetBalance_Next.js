@@ -1,7 +1,7 @@
 'use client';
 
-import postComment from '@/app/comment/[commentId]/apis/postComment';
-import postRecomment from '@/app/comment/[commentId]/recomment/[recommentId]/apis/postRecomment';
+import postComment from '@/services/comment/postComment';
+import postRecomment from '@/services/comment/postRecomment';
 import { CommentInputType } from '@/types/commentType';
 import { usePathname } from 'next/navigation';
 import React, { useState } from 'react';

@@ -2,7 +2,7 @@ import CommentInput from '@/components/CommentInput';
 import Bubble from '@/components/Bubble';
 import BubbleFooter from '@/components/BubbleFooter';
 import { CommentPageType, CommentType } from '@/types/commentType';
-import { getCommentList } from './apis/getCommentList';
+import { getCommentList } from '../../../services/comment/getCommentList';
 
 const Comment = async ({ params }: CommentPageType) => {
   const commentId = params.commentId;

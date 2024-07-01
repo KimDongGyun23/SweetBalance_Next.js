@@ -2,11 +2,11 @@
 
 import CircleButton from '@/components/CircleButton';
 import Loading from '@/components/Loading';
-import getBalanceList from '@/app/list/[subject]/apis/getBalanceList';
-import ListItem from '@/app/list/[subject]/components/ListItem';
+import ListItem from '@/app/list/[subject]/_components/ListItem';
 import { useInfiniteView } from '@/hooks/useInfiniteView';
 import changeSubjectLang from '@/utils/changeSubjectLang';
 import { ListPageType } from '@/types/listType';
+import getBalanceList from '@/services/list/getBalanceList';
 
 const ListPage = ({ params }: ListPageType) => {
   const subject = params.subject;

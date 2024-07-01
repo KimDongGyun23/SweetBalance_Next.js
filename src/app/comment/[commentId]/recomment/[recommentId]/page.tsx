@@ -2,7 +2,7 @@ import CommentInput from '@/components/CommentInput';
 import BubbleFooter from '@/components/BubbleFooter';
 import Bubble from '@/components/Bubble';
 import { CommentType, RecommentPageType } from '@/types/commentType';
-import { getRecommentList } from './apis/getRecommentList';
+import { getRecommentList } from '../../../../../services/comment/getRecommentList';
 
 const Recomment = async ({ params }: RecommentPageType) => {
   const { commentId, recommentId } = params;
