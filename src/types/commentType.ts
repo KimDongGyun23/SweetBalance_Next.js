@@ -1,3 +1,10 @@
+export interface CommentPageType {
+  params: { commentId: string };
+}
+
+export interface RecommentPageType {
+  params: { commentId: string; recommentId: string };
+}
 export interface CommentType {
   id: number;
   sideInfo: number;
@@ -21,5 +28,6 @@ export interface SendingCommentType {
 }
 
 export interface CommentInputType {
-  onClick: (comment: string) => Promise<void>;
+  commentId: string;
+  recommentId?: string;
 }

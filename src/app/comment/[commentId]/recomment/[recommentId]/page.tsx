@@ -1,35 +1,19 @@
-'use client';
 import CommentInput from '@/components/CommentInput';
-import ErrorText from '@/components/ErrorText';
-import Loading from '@/components/Loading';
-import { useRecommentList } from '@/app/comment/[commentId]/recomment/[recommentId]/hooks/useRecommentList';
-import { useParams } from 'next/navigation';
 import BubbleFooter from '@/components/BubbleFooter';
 import Bubble from '@/components/Bubble';
-import postRecomment from './apis/postRecomment';
+import { CommentType, RecommentPageType } from '@/types/commentType';
+import { getRecommentList } from './apis/getRecommentList';
 
-const Recomment = () => {
-  const { commentId, recommentId }: { commentId: string; recommentId: string } = useParams();
-  const { commentList, isLoading, error } = useRecommentList(
-    commentId as string,
-    recommentId as string
-  );
-  const onClick = async (comment: string) =>
-    await postRecomment(
-      { content: comment, sideInfo: 0, parentCommentId: +recommentId },
-      commentId
-    );
-
-  if (isLoading) return <Loading />;
-  if (error) return <ErrorText>{error}</ErrorText>;
-  if (commentList === null) return null;
+const Recomment = async ({ params }: RecommentPageType) => {
+  const { commentId, recommentId } = params;
+  const commentList = await getRecommentList(commentId, recommentId);
 
   return (
     <>
       <div
         className={`flexColumn flex-1 gap-[10px] overflow-x-hidden overflow-y-scroll p-3 scrollbar-hide`}
       >
-        {commentList.map((comment) => (
+        {commentList.map((comment: CommentType) => (
           <div
             className={`flex ${comment.sideInfo === 0 ? 'justify-start' : 'justify-end'}`}
             key={comment.id}
@@ -41,7 +25,7 @@ const Recomment = () => {
           </div>
         ))}
       </div>
-      <CommentInput onClick={onClick} />
+      <CommentInput commentId={commentId} recommentId={recommentId} />
     </>
   );
 };

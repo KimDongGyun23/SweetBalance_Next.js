@@ -1,29 +1,19 @@
-'use client';
 import CommentInput from '@/components/CommentInput';
-import ErrorText from '@/components/ErrorText';
-import Loading from '@/components/Loading';
-import { useCommentList } from '@/app/comment/[commentId]/hooks/useCommentList';
-import { useParams } from 'next/navigation';
 import Bubble from '@/components/Bubble';
 import BubbleFooter from '@/components/BubbleFooter';
-import postComment from './apis/postComment';
+import { CommentPageType, CommentType } from '@/types/commentType';
+import { getCommentList } from './apis/getCommentList';
 
-const Comment = () => {
-  const { commentId }: { commentId: string } = useParams();
-  const { commentList, isLoading, error } = useCommentList(commentId as string);
-  const onClick = async (comment: string) =>
-    await postComment({ content: comment, sideInfo: 0, parentCommentId: -1 }, commentId);
-
-  if (isLoading) return <Loading />;
-  if (error) return <ErrorText>{error}</ErrorText>;
-  if (commentList === null) return null;
+const Comment = async ({ params }: CommentPageType) => {
+  const commentId = params.commentId;
+  const commentList = await getCommentList(commentId);
 
   return (
     <>
       <div
         className={`flexColumn flex-1 gap-[10px] overflow-x-hidden overflow-y-scroll p-3 scrollbar-hide`}
       >
-        {commentList.map((comment) => (
+        {commentList.map((comment: CommentType) => (
           <div
             className={`flex ${comment.sideInfo === 0 ? 'justify-start' : 'justify-end'}`}
             key={comment.id}
@@ -35,7 +25,7 @@ const Comment = () => {
           </div>
         ))}
       </div>
-      <CommentInput onClick={onClick} />
+      <CommentInput commentId={commentId} />
     </>
   );
 };

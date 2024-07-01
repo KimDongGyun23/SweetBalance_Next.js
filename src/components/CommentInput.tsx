@@ -1,13 +1,24 @@
 'use client';
 
+import postComment from '@/app/comment/[commentId]/apis/postComment';
+import postRecomment from '@/app/comment/[commentId]/recomment/[recommentId]/apis/postRecomment';
 import { CommentInputType } from '@/types/commentType';
+import { usePathname } from 'next/navigation';
 import React, { useState } from 'react';
 import { AiOutlineSend } from 'react-icons/ai';
 
-const CommentInput = ({ onClick }: CommentInputType) => {
+const CommentInput = ({ commentId, recommentId }: CommentInputType) => {
+  const path = usePathname();
+  const isRecomment = path.includes('recomment');
   const [comment, setComment] = useState<string>('');
   const handleClick = async () => {
-    await onClick(comment);
+    if (!isRecomment)
+      await postComment({ content: comment, sideInfo: 0, parentCommentId: -1 }, commentId);
+    else if (isRecomment && recommentId)
+      await postRecomment(
+        { content: comment, sideInfo: 0, parentCommentId: +recommentId },
+        commentId
+      );
     setComment('');
   };
 
