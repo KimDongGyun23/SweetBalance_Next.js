@@ -29,11 +29,14 @@ const Recomment = () => {
       <div
         className={`flexColumn flex-1 gap-[10px] overflow-x-hidden overflow-y-scroll p-3 scrollbar-hide`}
       >
-        {commentList.map(({ sideInfo, id, content }) => (
-          <div className={`flex ${sideInfo === 0 ? 'justify-start' : 'justify-end'}`} key={id}>
+        {commentList.map((comment) => (
+          <div
+            className={`flex ${comment.sideInfo === 0 ? 'justify-start' : 'justify-end'}`}
+            key={comment.id}
+          >
             <div className="flexColumn gap-1">
-              <Bubble content={content} sideInfo={sideInfo} />
-              <BubbleFooter commentId={commentId} recommentId={id} sideInfo={sideInfo} />
+              <Bubble content={comment.content} sideInfo={comment.sideInfo} />
+              <BubbleFooter comment={comment} commentId={commentId} />
             </div>
           </div>
         ))}
