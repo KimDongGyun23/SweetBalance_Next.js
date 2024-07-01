@@ -6,12 +6,11 @@ import getBalanceList from '@/app/list/[subject]/apis/getBalanceList';
 import ListItem from '@/app/list/[subject]/components/ListItem';
 import { useInfiniteView } from '@/hooks/useInfiniteView';
 import changeSubjectLang from '@/utils/changeSubjectLang';
-import { usePathname, useRouter } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 
 const ListPage = () => {
-  const path = usePathname();
   const router = useRouter();
-  const subject = path.replace('/list/', '');
+  const { subject }: { subject: string } = useParams();
 
   const {
     list: postList,
