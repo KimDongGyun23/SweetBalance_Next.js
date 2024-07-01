@@ -11,8 +11,7 @@ export type BubbleType = Pick<CommentType, 'content' | 'sideInfo'>;
 
 export interface BubbleFooterType {
   commentId: string | number;
-  recommentId: string | number;
-  sideInfo: number;
+  comment: CommentType;
 }
 
 export interface SendingCommentType {

@@ -3,10 +3,11 @@ import { BubbleFooterType } from '@/types/commentType';
 import { usePathname, useRouter } from 'next/navigation';
 import { AiOutlineComment, AiOutlineHeart } from 'react-icons/ai';
 
-const BubbleFooter = ({ commentId, recommentId, sideInfo }: BubbleFooterType) => {
+const BubbleFooter = ({ commentId, comment }: BubbleFooterType) => {
   const path = usePathname();
   const router = useRouter();
   const isRecomment = path.includes('recomment');
+  const { id: recommentId, sideInfo, likeCount, childCount } = comment;
 
   return (
     <div
@@ -17,13 +18,13 @@ const BubbleFooter = ({ commentId, recommentId, sideInfo }: BubbleFooterType) =>
           className="flexAlign cursor-pointer gap-[1px]"
           onClick={() => router.push(`/comment/${commentId}/recomment/${recommentId}`)}
         >
-          <span>15</span>
+          <span>{childCount}</span>
           <AiOutlineComment />
         </div>
       )}
 
       <div className="flexAlign cursor-pointer gap-[1px]">
-        <span>13</span>
+        <span>{likeCount}</span>
         <AiOutlineHeart />
         {/* {like === 1 ? <AiFillHeart fill="red" /> : <AiOutlineHeart />} */}
       </div>
