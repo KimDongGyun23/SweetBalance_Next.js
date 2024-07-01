@@ -1,11 +1,8 @@
 import BALANCE_API from '@/apis/balanceApi';
 import { BalanceDataType } from '@/types/balanceType';
-import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
-const usebalanceGameData = () => {
-  const path = usePathname();
-  const id = +path.replace('/balance/', '');
+const usebalanceGameData = (id: string) => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isError, setIsError] = useState<boolean>(false);
   const [balanceData, setBalanceData] = useState<BalanceDataType | null>(null);

@@ -1,7 +1,7 @@
 const PATH = process.env.NEXT_PUBLIC_BASE_URL;
 
 const GET = {
-  balance(id: number) {
+  balance(id: number | string) {
     return fetch(`${PATH}/goldbalance/posts/${id}`);
   },
 };
