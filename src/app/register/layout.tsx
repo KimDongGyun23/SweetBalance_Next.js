@@ -1,4 +1,5 @@
 import SubHeader from '@/components/SubHeader';
+import { Suspense } from 'react';
 
 export default function ListLayout({
   children,
@@ -7,7 +8,9 @@ export default function ListLayout({
 }>) {
   return (
     <div className={`flexColumn min-h-content rounded-xl bg-white px-3 py-4`}>
-      <SubHeader />
+      <Suspense fallback={<>Loading...</>}>
+        <SubHeader />
+      </Suspense>
       <div className="flex-1">{children}</div>
     </div>
   );

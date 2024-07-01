@@ -1,6 +1,6 @@
 import SubHeader from '@/components/SubHeader';
 
-export default function ListLayout({
+export default function BalanceLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
