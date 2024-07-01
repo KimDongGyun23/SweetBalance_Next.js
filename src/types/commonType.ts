@@ -15,6 +15,7 @@ export interface ButtonProps {
 }
 
 export interface CircleButtonProps {
+  url: string;
   children: React.ReactNode;
 }
 

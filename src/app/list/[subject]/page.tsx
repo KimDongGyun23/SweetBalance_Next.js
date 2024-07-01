@@ -30,7 +30,7 @@ const ListPage = () => {
         ))}
       </div>
       {isLoading ? <Loading /> : <div ref={ref} style={{ height: '30px' }} />}
-      <CircleButton onClick={() => router.push('/register')}>NEW</CircleButton>
+      <CircleButton url="/register">NEW</CircleButton>
     </div>
   );
 };

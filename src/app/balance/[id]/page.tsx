@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import BalanceSelectItem from '@/app/balance/[id]/components/BalanceSelectItem';
 import CircleButton from '@/components/CircleButton';
-import Link from 'next/link';
 import balanceGameData from './apis/balanceGameData';
 import { BalancePageType } from '@/types/balanceType';
 
@@ -21,9 +20,7 @@ const Balance = async ({ params }: BalancePageType) => {
           detail={balanceData.rightSideDetail}
         />
       </div>
-      <Link href={`/comment/${id}`}>
-        <CircleButton>댓글</CircleButton>
-      </Link>
+      <CircleButton url={`/comment/${id}`}>댓글</CircleButton>
     </>
   );
 };
